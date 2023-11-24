@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -9,12 +9,38 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        apeach1: "url('/user.png')",
+        apeach2: "url('/user2.png')",
+      },
+
+      gridTemplateColumns: {
+        'repeat-8': 'repeat(auto-fill, minmax(320px, 1fr));',
+      },
+
+      animation: {
+        fadeIn: 'fadeIn 0.3s ease-in-out',
+        slideUpFromBottom: 'slideUpFromBottom 0.3s ease-out 0s 1',
+      },
+
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+
+        slideUpFromBottom: {
+          '0%': {
+            transform: 'translateY(70%)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateY(0)',
+            opacity: '1',
+          },
+        },
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
