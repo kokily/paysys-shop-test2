@@ -8,6 +8,27 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        '1xl': '1.4rem',
+        '2xl': '1.75rem',
+        '3xl': '2rem',
+        '4xl': '2.25rem',
+        '5xl': '2.7rem',
+        '6xl': '3.25rem',
+        '7xl': '3.75rem',
+        '8xl': '5rem',
+        '9xl': '6rem',
+      },
+
+      width: {
+        '992': '992px',
+        '1200': '1200px',
+      },
+
+      maxWidth: {
+        '1200': '1200px',
+      },
+
       backgroundImage: {
         apeach1: "url('/user.png')",
         apeach2: "url('/user2.png')",
