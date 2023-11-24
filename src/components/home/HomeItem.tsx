@@ -16,7 +16,7 @@ export function HomeItem() {
       let native = '';
 
       switch (link) {
-        case 'solder':
+        case 'soldier':
           native = '현역';
           break;
         case 'reserve':
