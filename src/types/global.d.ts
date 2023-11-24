@@ -18,6 +18,11 @@ declare global {
     [key: string]: string;
   }
 
+  interface MenuType {
+    id: number;
+    divide: string;
+  }
+
   // Auth Types
   interface SignOptions {
     expiresIn?: string | number;

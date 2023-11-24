@@ -35,7 +35,7 @@ export function Header() {
     <header
       className={clsx(
         'flex flex-col fixed w-full top-0 z-50',
-        'shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]',
+        'shadow-custom',
         'print:hidden',
       )}
     >

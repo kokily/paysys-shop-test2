@@ -1,3 +1,5 @@
+'use client';
+
 import type { ReactElement } from 'react';
 import { Children, cloneElement } from 'react';
 import Link from 'next/link';

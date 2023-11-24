@@ -26,14 +26,14 @@ export function NavList({ isAdmin }: Props) {
     <div
       className={clsx(
         'absolute top-full right-0 mt-1 transition-all duration-300',
-        'shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]',
+        'shadow-custom',
         {
           ['opacity-100 scale-100']: isOpen,
           ['opacity-0 scale-0']: !isOpen,
         },
       )}
     >
-      <div className="relative z-10 w-48 bg-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
+      <div className="relative z-10 w-48 bg-white shadow-custom">
         <NavItem href="/password">비밀번호 변경</NavItem>
 
         {isAdmin && (

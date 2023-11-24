@@ -1,3 +1,5 @@
+import { Home } from '@/components/home/Home';
+
 export default function ReservePage() {
-  return <div>ReservePage</div>;
+  return <Home />;
 }

@@ -34,8 +34,16 @@ const config: Config = {
         apeach2: "url('/user2.png')",
       },
 
+      scale: {
+        0.97: '0.97',
+      },
+
       gridTemplateColumns: {
         'repeat-8': 'repeat(auto-fill, minmax(320px, 1fr));',
+      },
+
+      boxShadow: {
+        custom: '0px 3px 8px rgba(0, 0, 0, 0.24)',
       },
 
       animation: {

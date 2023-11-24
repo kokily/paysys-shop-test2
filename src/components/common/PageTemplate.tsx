@@ -1,6 +1,8 @@
 import type { PropsWithChildren } from 'react';
 import clsx from 'clsx';
+
 import { Header } from './header/Header';
+import { Footer } from './footer/Footer';
 
 export function PageTemplate({ children }: PropsWithChildren) {
   return (
@@ -16,7 +18,7 @@ export function PageTemplate({ children }: PropsWithChildren) {
         {children}
       </main>
 
-      <div>Footer</div>
+      <Footer />
     </div>
   );
 }
