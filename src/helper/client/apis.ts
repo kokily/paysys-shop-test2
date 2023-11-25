@@ -1,4 +1,4 @@
-import { Cart, type Item } from '@prisma/client';
+import { Bill, Cart, type Item } from '@prisma/client';
 import axios from 'axios';
 import qs from 'qs';
 
@@ -40,5 +40,32 @@ export async function removeCartAPI() {
 
 export async function removeOneCartAPI(itemId: string) {
   const response = await client.patch<Cart>(`/cart/update/${itemId}`);
+  return response.data;
+}
+
+// Bills API
+export async function listBillsAPI(queries: ListBillsQueries) {
+  const queryString = qs.stringify(queries);
+  const response = await client.get<Array<Bill>>(`/bills?${queryString}`);
+  return response.data;
+}
+
+export async function readBillAPI(id: string) {
+  const response = await client.get<Bill>(`/bills/${id}`);
+  return response.data;
+}
+
+export async function addBillAPI(payload: AddBillPayload) {
+  const response = await client.post<Bill>('/bills/add', payload);
+  return response.data;
+}
+
+export async function removeBillAPI(id: string) {
+  const response = await client.delete(`/bills/remove/${id}`);
+  return response.data;
+}
+
+export async function restoreBillAPI(id: string) {
+  const response = await client.patch<Cart>(`/bills/restore/${id}`);
   return response.data;
 }
