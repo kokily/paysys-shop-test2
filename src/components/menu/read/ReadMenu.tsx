@@ -1,17 +1,17 @@
 'use client';
 
-import type { SyntheticEvent, ChangeEvent } from 'react';
-import { useEffect, useState } from 'react';
+import type { SyntheticEvent } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { useSession } from 'next-auth/react';
 import { toast } from 'react-toastify';
+import { useAtom } from 'jotai';
 import clsx from 'clsx';
 
 import { addCartAPI, readMenuAPI } from '@/helper/client/apis';
 import { MenuLogo } from './MenuLogo';
 import { MenuContents } from './MenuContents';
-import { useAtom } from 'jotai';
 import { menuState } from '@/helper/store';
 
 interface Props {
@@ -56,6 +56,7 @@ export function ReadMenu({ id }: Props) {
       },
       {
         onSuccess: () => {
+          dispatch({ count: '', price: '' });
           router.back();
         },
         onError: (err: any) => {
