@@ -10,9 +10,10 @@ interface Props {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   label: string;
   onKeyDown?: (e: KeyboardEvent) => void;
+  className?: string;
 }
 
-export function LoginInput(props: Props) {
+export function Input(props: Props) {
   return (
     <div className="relative w-full mb-7 bg-inherit">
       <input
@@ -21,6 +22,7 @@ export function LoginInput(props: Props) {
           'px-2 pl-4 rounded-lg text-black',
           'ring-1 ring-cyan-500 focus focus:ring-cyan-700',
           'focus:outline-none placeholder-transparent',
+          props.className && props.className,
         )}
         type={props.type}
         name={props.name}

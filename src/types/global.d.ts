@@ -40,8 +40,8 @@ declare global {
   }
 
   interface ReadMenuPayload {
-    count: number;
-    price: number;
+    count: string;
+    price: string;
   }
 
   // Cart Types
@@ -57,6 +57,17 @@ declare global {
     userId: string;
     count: number;
     price: number;
+  }
+
+  interface AddItemModel {
+    id: string;
+    name: string;
+    divide: string;
+    native: string;
+    unit: string;
+    price: number;
+    count: number;
+    amount: number;
   }
 
   // Bills Types

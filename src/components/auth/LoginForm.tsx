@@ -1,10 +1,8 @@
-'use client';
-
 import type { KeyboardEvent, SyntheticEvent } from 'react';
 import { useAtom } from 'jotai';
 
 import { authState } from '@/helper/store';
-import { LoginInput } from './LoginInput';
+import { Input } from '../common/Input';
 import { Button } from '../common/Button';
 
 interface Props {
@@ -23,14 +21,14 @@ export function LoginForm({ onLogin }: Props) {
 
   return (
     <div className="h-auto bg-white p-8">
-      <LoginInput
+      <Input
         type="text"
         name="username"
         value={username}
         onChange={(e) => dispatch({ ...state, username: e.target.value })}
         label="아이디"
       />
-      <LoginInput
+      <Input
         type="password"
         name="password"
         value={password}

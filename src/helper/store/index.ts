@@ -8,3 +8,9 @@ export const authState = atom<AuthPayload>({
 
 // Header State
 export const headerState = atom<boolean>(false);
+
+// Menu State
+export const menuState = atom<ReadMenuPayload>({
+  count: '',
+  price: '',
+});
