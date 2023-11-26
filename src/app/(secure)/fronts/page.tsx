@@ -1,3 +1,5 @@
+import { ListFronts } from '@/components/fronts/ListFronts';
+
 export default function ListFrontsPage() {
-  return <div>ListFrontsPage</div>;
+  return <ListFronts />;
 }

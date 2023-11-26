@@ -29,6 +29,10 @@ const config: Config = {
         '1200': '1200px',
       },
 
+      minWidth: {
+        '50': '50px',
+      },
+
       borderWidth: {
         'b-1': '1px',
       },

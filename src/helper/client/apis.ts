@@ -71,3 +71,14 @@ export async function restoreBillAPI(id: string) {
   const response = await client.patch<Cart>(`/bills/restore/${id}`);
   return response.data;
 }
+
+// Reserve API
+export async function addReserveAPI(payload: AddReservePayload) {
+  const response = await client.post<Bill>('/reserve/add', payload);
+  return response.data;
+}
+
+export async function removeReserveAPI(id: string) {
+  const response = await client.delete(`/reserve/remove/${id}`);
+  return response.data;
+}

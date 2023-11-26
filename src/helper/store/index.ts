@@ -24,3 +24,12 @@ export const initialCart = {
 };
 
 export const cartState = atom<ViewCartPayload>(initialCart);
+
+// Front State
+export const initialFronts = {
+  title: '',
+  hall: '',
+  userId: '',
+};
+
+export const frontsState = atom<ListBillsState>(initialFronts);

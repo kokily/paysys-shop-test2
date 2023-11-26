@@ -84,6 +84,12 @@ declare global {
     cursor?: string;
   }
 
+  interface ListBillsState {
+    title: string;
+    hall: string;
+    userId: string;
+  }
+
   // Reserve Types
   interface AddReservePayload {
     billId: string;
