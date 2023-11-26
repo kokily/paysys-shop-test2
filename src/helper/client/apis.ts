@@ -39,7 +39,9 @@ export async function removeCartAPI() {
 }
 
 export async function removeOneCartAPI(itemId: string) {
-  const response = await client.patch<Cart>(`/cart/update/${itemId}`);
+  const response = await client.patch<Cart | { message: string }>(
+    `/cart/update/${itemId}`,
+  );
   return response.data;
 }
 

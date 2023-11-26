@@ -3,6 +3,7 @@ import clsx from 'clsx';
 
 interface Props extends PropsWithChildren {
   fullSize?: boolean;
+  smallSize?: boolean;
   add?: boolean;
   type?: string;
   color: 'submit' | 'cancel' | 'edit' | 'menu';
@@ -35,9 +36,10 @@ export function Button(props: Props) {
       className={clsx(
         'rounded-xl text-base font-semibold p-2',
         'cursor-pointer transition-all duration-200',
-        'active:transition-transform active:translate-y-1',
+        'transition-transform active:scale-0.97',
         colorStyles[props.color],
         {
+          ['w-auto py-1 rounded-xm']: props.smallSize,
           ['w-full ml-0']: props.fullSize,
           ['w-24']: !props.fullSize,
           ['mr-2']: props.add,

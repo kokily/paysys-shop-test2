@@ -29,6 +29,18 @@ const config: Config = {
         '1200': '1200px',
       },
 
+      borderWidth: {
+        'b-1': '1px',
+      },
+
+      borderRadius: {
+        xm: '4px',
+      },
+
+      zIndex: {
+        '5000': '5000',
+      },
+
       backgroundImage: {
         apeach1: "url('/user.png')",
         apeach2: "url('/user2.png')",

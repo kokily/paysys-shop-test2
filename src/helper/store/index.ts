@@ -14,3 +14,13 @@ export const menuState = atom<ReadMenuPayload>({
   count: '',
   price: '',
 });
+
+// Cart State
+export const initialCart = {
+  title: '',
+  hall: '',
+  etc: '',
+  totalAmount: 0,
+};
+
+export const cartState = atom<ViewCartPayload>(initialCart);

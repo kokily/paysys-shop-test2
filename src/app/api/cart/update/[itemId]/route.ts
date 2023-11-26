@@ -46,7 +46,7 @@ export async function PATCH(_: NextRequest, { params: { itemId } }: any) {
         where: { id: cart.id },
         data: {
           ...(updateCart as any),
-          updateCart: new Date(),
+          updatedAt: new Date(),
         },
       });
 
