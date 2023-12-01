@@ -10,6 +10,10 @@ export function unitOfDate(target: Date) {
   return new Date(target).toLocaleDateString();
 }
 
+export function unitOfTime(target: Date) {
+  return new Date(target).toLocaleTimeString();
+}
+
 export function serializeUser(user: User) {
   const { password, ...userWithoutPassword } = user;
 
