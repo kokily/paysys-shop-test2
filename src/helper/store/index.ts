@@ -33,3 +33,12 @@ export const initialFronts = {
 };
 
 export const frontsState = atom<ListBillsState>(initialFronts);
+
+// Users State
+export const passwordState = atom<PasswordPayload>({
+  password: '',
+});
+
+export const usernameState = atom<UsernamePayload>({
+  username: '',
+});

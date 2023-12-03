@@ -82,3 +82,37 @@ export async function removeReserveAPI(id: string) {
   const response = await client.delete(`/reserve/remove/${id}`);
   return response.data;
 }
+
+// Users API
+export async function changePasswordAPI(payload: PasswordPayload) {
+  const response = await client.post<SerializeUser>('/password', payload);
+  return response.data;
+}
+
+export async function listUsersAPI(queries: ListUsersQueries) {
+  const queryString = qs.stringify(queries);
+  const response = await client.get<Array<SerializeUser>>(
+    `/users?${queryString}`,
+  );
+  return response.data;
+}
+
+export async function readUserAPI(id: string) {
+  const response = await client.get<SerializeUser>(`/users/${id}`);
+  return response.data;
+}
+
+export async function removeUserAPI(id: string) {
+  const response = await client.delete(`/users/remove/${id}`);
+  return response.data;
+}
+
+export async function setAdminAPI(id: string) {
+  const response = await client.patch<SerializeUser>(`/users/admin/${id}`);
+  return response.data;
+}
+
+export async function setEmployeeAPI(id: string) {
+  const response = await client.patch<SerializeUser>(`/users/employee/${id}`);
+  return response.data;
+}

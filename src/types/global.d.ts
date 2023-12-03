@@ -128,6 +128,13 @@ declare global {
     password: string;
   }
 
+  interface UsernamePayload {
+    username: string;
+  }
+
+  // Identify Types
+  type IdentifyType = 'admin' | 'employee';
+
   // Wedding Types
   interface ListWeddingsQueries {
     husbandName?: string;

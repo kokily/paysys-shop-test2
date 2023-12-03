@@ -65,6 +65,7 @@ const config: Config = {
       animation: {
         fadeIn: 'fadeIn 0.3s ease-in-out',
         slideUpFromBottom: 'slideUpFromBottom 0.3s ease-out 0s 1',
+        shine: 'shine 1s infinite',
       },
 
       keyframes: {
@@ -81,6 +82,12 @@ const config: Config = {
           '100%': {
             transform: 'translateY(0)',
             opacity: '1',
+          },
+        },
+
+        shine: {
+          to: {
+            'background-position': '100% 0, 0 0',
           },
         },
       },
