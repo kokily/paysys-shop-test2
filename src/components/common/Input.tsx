@@ -11,6 +11,7 @@ interface Props {
   label: string;
   onKeyDown?: (e: KeyboardEvent) => void;
   className?: string;
+  autoFocus?: boolean;
 }
 
 export function Input(props: Props) {
@@ -30,6 +31,7 @@ export function Input(props: Props) {
         onChange={props.onChange}
         placeholder={props.label}
         onKeyDown={props.onKeyDown}
+        autoFocus={props.autoFocus}
         required
       />
       <label

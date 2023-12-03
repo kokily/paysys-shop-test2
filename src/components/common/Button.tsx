@@ -40,7 +40,7 @@ export function Button(props: Props) {
         colorStyles[props.color],
         {
           ['w-auto py-1 rounded-xm']: props.smallSize,
-          ['w-full ml-0']: props.fullSize,
+          ['w-full ml-0 mb-2']: props.fullSize,
           ['w-24']: !props.fullSize,
           ['mr-2']: props.add,
           [props.className!]: props.className,

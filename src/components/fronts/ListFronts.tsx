@@ -1,7 +1,7 @@
 'use client';
 
 import type { Bill } from '@prisma/client';
-import { type SyntheticEvent, useMemo } from 'react';
+import { type SyntheticEvent, useMemo, useEffect } from 'react';
 import { useInfiniteQuery, useQueryClient } from '@tanstack/react-query';
 import { useAtom } from 'jotai';
 import { useRouter } from 'next/navigation';
@@ -46,11 +46,13 @@ export function ListFronts() {
 
   const onHallList = async (hall: string) => {
     await queryClient.invalidateQueries({ queryKey: ['fronts'] });
+    await dispatch({ ...state, hall });
     await refetch();
   };
 
   const onUserList = async (userId: string) => {
     await queryClient.invalidateQueries({ queryKey: ['fronts'] });
+    await dispatch({ ...state, userId });
     await refetch();
   };
 
@@ -64,6 +66,10 @@ export function ListFronts() {
   };
 
   const { setTarget } = useObserver({ onIntersect });
+
+  useEffect(() => {
+    if (scrollY !== 0) window.scrollTo(0, Number(scrollY));
+  }, []);
 
   return (
     <div className="mt-4 mb-24 flex flex-col items-center overflow-hidden sm:w-full">

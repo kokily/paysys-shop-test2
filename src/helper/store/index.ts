@@ -42,3 +42,18 @@ export const passwordState = atom<PasswordPayload>({
 export const usernameState = atom<UsernamePayload>({
   username: '',
 });
+
+// Items State
+export const itemState = atom<ItemPayload>({
+  name: '',
+});
+
+export const initialItem = {
+  name: '',
+  divide: '',
+  native: '',
+  unit: '',
+  price: '',
+};
+
+export const addItemState = atom<AddItemState>(initialItem);

@@ -10,21 +10,21 @@ export function CartInputs() {
   return (
     <div className="bg-white">
       <Input
-        type="title"
+        type="text"
         name="title"
         value={title}
         onChange={(e) => dispatch({ ...state, title: e.target.value })}
         label="행사명 *"
       />
       <Input
-        type="hall"
+        type="text"
         name="hall"
         value={hall}
         onChange={(e) => dispatch({ ...state, hall: e.target.value })}
         label="행사홀 *"
       />
       <Input
-        type="etc"
+        type="text"
         name="etc"
         value={etc}
         onChange={(e) => dispatch({ ...state, etc: e.target.value })}

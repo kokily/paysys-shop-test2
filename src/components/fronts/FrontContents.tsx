@@ -3,6 +3,7 @@ import clsx from 'clsx';
 
 import { useMobile } from '@/helper/client/hooks';
 import { unitOfDate } from '@/helper/client/utils';
+import { Skelton } from '../common/Skelton';
 
 interface Props {
   fronts: Array<Bill>;
@@ -51,7 +52,9 @@ export function FrontContents(props: Props) {
       <tbody>
         {fronts === null || fronts.length === 0 ? (
           <tr>
-            <td colSpan={isMobile ? 4 : 5}>작성된 전표가 없습니다.</td>
+            {Array.from(Array(40), (_, i) => (
+              <Skelton key={i} colsNum={isMobile ? 4 : 5} />
+            ))}
           </tr>
         ) : (
           <>
