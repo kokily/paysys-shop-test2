@@ -1,4 +1,4 @@
-import { Bill, Cart, type Item } from '@prisma/client';
+import type { Bill, Cart, Wedding, Item } from '@prisma/client';
 import axios from 'axios';
 import qs from 'qs';
 
@@ -147,5 +147,42 @@ export async function updateItemAPI({
   payload: AddItemPayload;
 }) {
   const response = await client.patch<Item>(`/items/update/${id}`, payload);
+  return response.data;
+}
+
+// Weddings API
+export async function listWeddingsAPI(queries: ListWeddingsQueries) {
+  const queryString = qs.stringify(queries);
+  const response = await client.get<Array<Wedding>>(`/weddings?${queryString}`);
+  return response.data;
+}
+
+export async function readWeddingAPI(id: string) {
+  const response = await client.get<Wedding>(`/weddings/${id}`);
+  return response.data;
+}
+
+export async function removeWeddingAPI(id: string) {
+  const response = await client.delete(`/weddings/remove/${id}`);
+  return response.data;
+}
+
+// Expense API
+export async function addExpenseAPI(payload: AddExpensePayload) {
+  const response = await client.post<Wedding>(`/expense`, payload);
+  return response.data;
+}
+
+export async function updateExpenseAPI({
+  id,
+  payload,
+}: {
+  id: string;
+  payload: AddExpensePayload;
+}) {
+  const response = await client.patch<Wedding>(
+    `/expense/update/${id}`,
+    payload,
+  );
   return response.data;
 }
