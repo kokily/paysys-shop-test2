@@ -154,6 +154,12 @@ declare global {
     cursor?: string;
   }
 
+  interface ListWeddingsState {
+    divide: 'husband' | 'bride';
+    husbandName: string;
+    brideName: string;
+  }
+
   // Expense Types
   interface AddExpensePayload {
     husbandName: string;

@@ -154,13 +154,13 @@ export function AddItem({ id }: Props) {
           <Select
             name="divide"
             value={divide}
-            onChange={(e) => dispatch({ ...state, divide })}
+            onChange={(e) => dispatch({ ...state, divide: e.target.value })}
             data={divideArray}
           />
           <Select
             name="native"
             value={native}
-            onChange={(e) => dispatch({ ...state, native })}
+            onChange={(e) => dispatch({ ...state, native: e.target.value })}
             data={nativeArray}
           />
           <Input

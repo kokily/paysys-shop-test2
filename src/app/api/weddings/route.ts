@@ -4,7 +4,8 @@ import db from '@/helper/server/database';
 import { checkAdmin, getQuery } from '@/helper/server/utils';
 
 export async function GET(req: NextRequest) {
-  const date = getQuery(req, 'date');
+  const husbandName = getQuery(req, 'husbandName');
+  const brideName = getQuery(req, 'brideName');
   const cursor = getQuery(req, 'cursor');
   const cursorObj = cursor === '' ? undefined : { id: cursor };
   const limit = 40;
@@ -14,8 +15,11 @@ export async function GET(req: NextRequest) {
 
     const weddings = await db.wedding.findMany({
       where: {
-        eventAt: {
-          contains: date,
+        husbandName: {
+          contains: husbandName,
+        },
+        brideName: {
+          contains: brideName,
         },
       },
       cursor: cursorObj,

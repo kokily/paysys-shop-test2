@@ -1,3 +1,5 @@
+import { ListWeddings } from '@/components/weddings/ListWeddings';
+
 export default function ListWeddingsPage() {
-  return <div>ListWeddingsPage</div>;
+  return <ListWeddings />;
 }

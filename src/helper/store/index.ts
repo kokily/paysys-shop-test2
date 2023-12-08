@@ -57,3 +57,10 @@ export const initialItem = {
 };
 
 export const addItemState = atom<AddItemState>(initialItem);
+
+// Weddings State
+export const weddingsState = atom<ListWeddingsState>({
+  divide: 'husband',
+  husbandName: '',
+  brideName: '',
+});
