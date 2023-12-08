@@ -161,6 +161,45 @@ declare global {
   }
 
   // Expense Types
+  interface AddExpenseState {
+    husbandName: string;
+    brideName: string;
+    weddingAt: string;
+    eventAt: string;
+    rentalHusband: string;
+    swordHusband: string;
+    gloveHusband: string;
+    swordSetHusband: string;
+    bouquetHusband: string;
+    companyHusband: string;
+    hostHusband: string;
+    frameHusband: string;
+    dressHusband: string;
+    etcHusband: string;
+    rentalBride: string;
+    swordBride: string;
+    gloveBride: string;
+    swordSetBride: string;
+    bouquetBride: string;
+    companyBride: string;
+    hostBride: string;
+    frameBride: string;
+    dressBride: string;
+    etcBride: string;
+    weddingHusbandCost: string;
+    weddingBrideCost: string;
+    mealsMethod: string;
+    mealsPrice: string;
+    mealsHusband: string;
+    mealsBride: string;
+    mealsHusbandCost: string;
+    mealsBrideCost: string;
+    reserveMethod: string;
+    reservePrice: string;
+    reserveHusbandCost: string;
+    reserveBrideCost: string;
+  }
+
   interface AddExpensePayload {
     husbandName: string;
     brideName: string;

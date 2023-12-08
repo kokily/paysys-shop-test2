@@ -64,7 +64,12 @@ export function Search({ onSearch }: Props) {
         />
       )}
 
-      <Button color="submit" className="ml-2" smallSize onClick={onSearch}>
+      <Button
+        color="submit"
+        className="ml-2"
+        smallSize={true}
+        onClick={onSearch}
+      >
         검색
       </Button>
     </div>
