@@ -1,5 +1,12 @@
 import { NextRequest } from 'next/server';
 import { getServerSession } from 'next-auth';
+import {
+  S3Client,
+  PutObjectCommand,
+  GetObjectCommand,
+} from '@aws-sdk/client-s3';
+import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
+import moment from 'moment';
 
 import db from './database';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
@@ -43,4 +50,38 @@ export async function checkAdmin() {
   }
 
   return true;
+}
+
+// S3 Upload
+export async function s3UploadImage({
+  file,
+  fileName,
+  type,
+}: S3FileType): Promise<string> {
+  // Global Config
+  const s3client = new S3Client({
+    region: 'ap-northeast-2',
+    credentials: {
+      accessKeyId: process.env.ACCESS_KEY_ID as string,
+      secretAccessKey: process.env.SECRET_ACCESS_KEY as string,
+    },
+  });
+
+  const Params: S3ParamsType = {
+    Bucket: 'image.paysys.kr',
+    Key: `${moment().format('YYYYMMDD_HHmmss')}_${fileName.trim()}`,
+    Body: file,
+    ContentType: type,
+  };
+
+  const command = new PutObjectCommand(Params);
+
+  await s3client.send(command);
+
+  const getCommand = new GetObjectCommand(Params);
+  const url = await getSignedUrl(s3client, getCommand, {
+    expiresIn: 3600,
+  });
+
+  return url;
 }

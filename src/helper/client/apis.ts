@@ -186,3 +186,19 @@ export async function updateExpenseAPI({
   );
   return response.data;
 }
+
+// Sign API
+export async function signUploadAPI(data: FormData) {
+  const response = await client.post<S3ReturnType>('/sign/upload', data);
+  return response.data;
+}
+
+export async function addSignAPI(payload: AddSignPayload) {
+  const response = await client.post<Wedding>(`/sign/add`, payload);
+  return response.data;
+}
+
+export async function removeSignAPI(id: string) {
+  const response = await client.delete(`/sign/remove/${id}`);
+  return response.data;
+}

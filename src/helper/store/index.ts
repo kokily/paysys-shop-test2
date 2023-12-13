@@ -106,3 +106,8 @@ export const initialExpense = {
 };
 
 export const expenseState = atom<AddExpenseState>(initialExpense);
+
+// Sign
+export const imageState = atom('');
+export const husbandState = atom(false);
+export const brideState = atom(false);

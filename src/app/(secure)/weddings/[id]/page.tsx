@@ -1,9 +1,9 @@
+import { ReadWedding } from '@/components/wedding/ReadWedding';
+
 export default function ReadWeddingPage({
   params,
 }: {
   params: { id: string };
 }) {
-  console.log(params.id);
-
-  return <div>ReadWeddingPage</div>;
+  return <ReadWedding id={params.id} />;
 }

@@ -1,6 +1,7 @@
 import type { User, Item, Bill, Cart, Wedding } from '@prisma/client';
 import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import NextAuth from 'next-auth/next';
+import fs from 'fs';
 
 declare module 'next-auth' {
   interface Session {
@@ -285,6 +286,23 @@ declare global {
   interface UploadType {
     name: string;
     type: string;
+  }
+
+  interface S3FileType {
+    file: Buffer;
+    fileName: string;
+    type: string;
+  }
+
+  interface S3ParamsType {
+    Bucket: string;
+    Body: Buffer;
+    Key: string;
+    ContentType: string;
+  }
+
+  interface S3ReturnType {
+    target: string;
   }
 
   interface AddSignPayload {
